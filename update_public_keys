@@ -1,0 +1,14 @@
+#from cli
+
+export publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set) 
+
+export secretVar='{
+    "type": "jwks",
+    "value": '${publickey}'
+  }'
+
+echo $secretVar > newfile
+ 
+curl -H "$(conjur authn authenticate -H)" \
+        --data "$(cat newfile)" \
+     http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
