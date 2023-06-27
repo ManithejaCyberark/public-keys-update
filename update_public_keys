@@ -1,4 +1,4 @@
-#run from freestyle project
+#run from freestyle/pipeline project
 
 export publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set) 
 
