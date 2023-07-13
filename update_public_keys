@@ -1,14 +1,21 @@
-#run from freestyle/pipeline project
 
-export publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set) 
+#!/bin/bash
 
+#create the DUMMY_PASSWORD in the jenkins credentials 
+echo $DUMMY_PASSWORD
+
+#get the public-keys
+publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set)
 export secretVar='{
-    "type": "jwks",
-    "value": '${publickey}'
-  }'
+    "type": "jwks",
+    "value": '${publickey}'
+  }'
+echo $secretVar > newfile123
 
-echo $secretVar > newfile
- 
-curl -H "$(conjur authn authenticate -H)" \
-        --data "$(cat newfile)" \
-     http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
+#update the public-keys
+#HOSTAPIKEY ---> apikey of the host
+curl --header "Accept-Encoding: base64" --data "$HOSTAPIKEY" http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate > /tmp/conjur_token
+CONT_SESSION_TOKEN=$(cat /tmp/conjur_token)
+curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
+    --data "$(cat newfile123)" \
+     http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
