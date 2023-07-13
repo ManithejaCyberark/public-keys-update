@@ -1,5 +1,5 @@
-
 #!/bin/bash
+#Note ---> create one sample freestyle project and run the below steps by modified with the required details
 
 #create the DUMMY_PASSWORD in the jenkins credentials 
 echo $DUMMY_PASSWORD
@@ -13,7 +13,8 @@ export secretVar='{
 echo $secretVar > newfile123
 
 #update the public-keys
-#HOSTAPIKEY ---> apikey of the host
+#HOSTAPIKEY ---> apikey of the host goes here
+
 curl --header "Accept-Encoding: base64" --data "$HOSTAPIKEY" http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate > /tmp/conjur_token
 CONT_SESSION_TOKEN=$(cat /tmp/conjur_token)
 curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
