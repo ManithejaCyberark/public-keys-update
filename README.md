@@ -49,6 +49,8 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
 ```
 <img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
 
+
+
 - **Restart the jenkins** and build this freestyle project will automatically update the public-keys variable values by connecting to the conjur vault. 
   ``
   **Conjur OS**
