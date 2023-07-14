@@ -22,7 +22,7 @@
 
 
 ### - Usage from Jenkins freestyle project
-- Create jenkins freestyle poject and To bind to the secret created for the host or user, use the option "Use secret text(s) or file(s)" in the "Build Environment" section of a Freestyle project
+- Create jenkins freestyle project and To bind to the secret created for the host or user, use the option "Use secret text(s) or file(s)" in the "Build Environment" section of a Freestyle project
   <img width="1000" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/ebcbe9e0-315b-4c9d-a24c-fa168eb6a840">
 - Build steps to update the public-keys variable value
 ```
