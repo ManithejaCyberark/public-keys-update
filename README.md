@@ -44,7 +44,7 @@ echo $secretVar > publickeysfile
 
 curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
     --data "$(publickeysfile)" \
-     http://conjur_server/secrets/myConjurAccount/variable/public-keys
+     http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
 
 ```
 
