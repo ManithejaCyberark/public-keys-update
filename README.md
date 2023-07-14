@@ -4,4 +4,4 @@
 + Conjur Secrets plugin
 + Conjur Server
 + Conjur Policies
-  ** required
+  * [Next Step]required
