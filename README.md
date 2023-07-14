@@ -28,8 +28,6 @@
 # Instructions for Conjur OS and conjur Enterprise:
 #!/bin/bash
 
-#if the host is host:jenkins/projects/jenkins the its encoded format is: host%2Fjenkins%2Fprojects%2Fjenkins
-
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
       http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate)
       
