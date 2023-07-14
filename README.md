@@ -49,7 +49,7 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
 ```
 
 ```
-# Instructions for Conjur Enterprise and Conjur Cloud
+# Instructions for Conjur Cloud
 
 #!/bin/bash
 
