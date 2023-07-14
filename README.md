@@ -77,7 +77,7 @@ curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
 
 
 
-- **Restart the jenkins** and build the freestyle project will **update** the **public-keys** variable values by connecting to the conjur vault. 
+- **Restart the jenkins** and build the freestyle project will **update** the **public-keys** variable by connecting to the conjur vault using ***conjur_access token***. 
   ```
   for Conjur OS:
   - conjur variable value conjur/authn-jwt/<service-id>/public-keys
