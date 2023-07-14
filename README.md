@@ -51,17 +51,21 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
 
 ```
 # Conjur Enterprise and Conjur Cloud
+
 #!/bin/bash
+
 CONJUR_ACCESS_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$CONJURCLOUDHOST1APIKEY" \
   	   https://conjurcloudint.secretsmgr.cyberark.cloud/api/authn/conjur/host%2Fdata%2Fconjur-cloud-host1/authenticate)
-#get the public-keys
 
+#get the public-keys
 publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set)
 export secretVar='{
     "type": "jwks",
     "value": '${publickey}'
   }'
 echo $secretVar > publickeysfile
+
+#update the public-keys or set a secret
 
 curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
      --data "$(cat publickeysfile)" \
