@@ -4,9 +4,8 @@
 + Conjur Secrets plugin
 + Conjur Server
 + Conjur Policies
-  * the host or user should have permission to only update the public-keys.
+  * Note: make sure that the **`host`** has required permissions to **`update`** the **`resource [public-keys]`** variable value in the Conjur Policies
   * Here an Example
-  * Note: make sure that the **`host`** has required permissions to **`update`** the **`resource [public-keys] variable value`** in the Conjur Policies
     ```
     - !permit
       resource: !variable conjur/authn-jwt/jenkins/public-keys
