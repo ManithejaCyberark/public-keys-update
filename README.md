@@ -4,7 +4,7 @@
 + Conjur Secrets plugin
 + Conjur Server
 + Conjur Policies
-  * Note: make sure that the **`host`** has required permissions to **`update`** the **`resource [public-keys]`** variable value in the Conjur Policies
+  * **`Note`**: make sure that the **`host`** has required permissions to **`update`** the **`resource [public-keys]`** variable value in the Conjur Policies
   * Here an Example
     ```
     - !permit
