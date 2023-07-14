@@ -4,7 +4,7 @@
 + Conjur Secrets plugin
 + Conjur Server
 + Conjur Policies
-  * the host or user should have permission to update the public-keys
+  * the host or user should have permission to only update the public-keys.
   * Here an Example
     ```
     - !permit
