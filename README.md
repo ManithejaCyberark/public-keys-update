@@ -3,4 +3,5 @@
 + Jenkins Server
 + Conjur Secrets plugin
 + Conjur Server
-+ Conjur Policies
++ * Conjur Policies
+  * required
