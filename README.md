@@ -64,7 +64,7 @@ export secretVar='{
 echo $secretVar > publickeysfile
 
 curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
-     --data "hfshfdshfkdsgfkgsdfgasd" \
+     --data "$(cat publickeysfile)" \
      https://conjurcloudint.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/jenkins-service/public-keys
  
 ```
