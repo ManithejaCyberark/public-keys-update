@@ -72,7 +72,7 @@ curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
      https://<subdomain>.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/<service_id>/public-keys
 
 ```
-## Example
+## Example 
 <img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
 
 
