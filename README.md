@@ -15,5 +15,5 @@
 
 ## Usage instructions
 ### Step by step guide
-The first step is to store the credential required for the Jenkins projects to connect to Conjur. Click the Credentials tab -- add credentials - Select Secret text ---  provide API key or password of that user or host - create
+The first step is to store the credential required for the Jenkins projects to connect to Conjur. Click the Credentials tab -- add credentials -- Select Secret text --- provide API key or password of that user or host --- create
 ![image](https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/1549416a-83c7-440f-8565-f95b3ccc1e6a)
