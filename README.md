@@ -26,6 +26,7 @@
   <img width="1000" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/ebcbe9e0-315b-4c9d-a24c-fa168eb6a840">
 - Build steps to update the public-keys variable value
 ```
+# Conjur OS:
 #!/bin/bash
 
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
@@ -46,6 +47,26 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
     --data "$(publickeysfile)" \
      http://conjur_server/secrets/<account>/variable/<variable_name>
 
+```
+
+```
+# Conjur Enterprise and Conjur Cloud
+#!/bin/bash
+CONJUR_ACCESS_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$CONJURCLOUDHOST1APIKEY" \
+  	   https://conjurcloudint.secretsmgr.cyberark.cloud/api/authn/conjur/host%2Fdata%2Fconjur-cloud-host1/authenticate)
+#get the public-keys
+
+publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set)
+export secretVar='{
+    "type": "jwks",
+    "value": '${publickey}'
+  }'
+echo $secretVar > publickeysfile
+
+curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
+     --data "hfshfdshfkdsgfkgsdfgasd" \
+     https://conjurcloudint.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/jenkins-service/public-keys
+ 
 ```
 <img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
 
