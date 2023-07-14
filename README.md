@@ -29,11 +29,11 @@
 #!/bin/bash
 
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
-      http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate)
+      http://conjur_server/authn/<account>/<host>/authenticate)
       
 #get the public-keys
 
-publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set)
+publickey=$(curl -k http://<jenkins_url>/jwtauth/conjur-jwk-set)
 export secretVar='{
     "type": "jwks",
     "value": '${publickey}'
@@ -44,7 +44,7 @@ echo $secretVar > publickeysfile
 
 curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
     --data "$(publickeysfile)" \
-     http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
+     http://conjur_server/secrets/<account>/variable/<variable_name>
 
 ```
 <img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
