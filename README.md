@@ -1,3 +1,4 @@
+*mani
 # public-keys update
 ## Requirement
 + Jenkins Server
