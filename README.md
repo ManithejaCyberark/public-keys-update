@@ -1,5 +1,5 @@
 ## public-keys update ##
-- Prerequisite
+### Prerequisite
 + Jenkins Server
 + Conjur Secrets plugin
 + Conjur Server
