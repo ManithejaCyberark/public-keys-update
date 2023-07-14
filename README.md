@@ -70,13 +70,9 @@ echo $secretVar > publickeysfile
 curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
      --data "$(cat publickeysfile)" \
      https://<subdomain>.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/jenkins-service/public-keys
- <img width="1087" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/75e8bf11-41ea-4fe1-a996-f9cd962be2e7">
 
 ```
 
-```
-# Instructions for Conjur Enterprise
-```
 <img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
 
 
