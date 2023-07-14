@@ -23,9 +23,9 @@
 Usage from Jenkins freestyle project
 - To bind to Conjur secrets, use the option "Use secret text(s) or file(s)" in the "Build Environment" section of a Freestyle project
 - <img width="1000" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/ebcbe9e0-315b-4c9d-a24c-fa168eb6a840">
-  * steps to update the public-keys variable value
-  ```
-  #!/bin/bash
+- steps to update the public-keys variable value
+```
+#!/bin/bash
 
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
       http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate)
@@ -45,6 +45,6 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
     --data "$(publickeysfile)" \
      http://conjur_server/secrets/myConjurAccount/variable/conjur%2Fauthn-jwt%2Fjenkins%2Fpublic-keys
 
-  ```
+```
 
 
