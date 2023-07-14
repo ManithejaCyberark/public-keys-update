@@ -28,8 +28,10 @@
 # Instructions for Conjur OS and conjur Enterprise:
 #!/bin/bash
 
+#if the host is host:jenkins/projects/jenkins the its encoded format is: host%2Fjenkins%2Fprojects%2Fjenkins
+
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
-      http://conjur_server/authn/<account>/<host>/authenticate)
+      http://conjur_server/authn/myConjurAccount/host%2Fjenkins%2Fprojects%2Fjenkins/authenticate)
       
 #get the public-keys
 
@@ -44,7 +46,7 @@ echo $secretVar > publickeysfile
 
 curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
     --data "$(publickeysfile)" \
-     http://conjur_server/secrets/<account>/variable/<variable_name>
+     http://conjur_server/secrets/myConjurAccount/variable/public-keys
 
 ```
 
@@ -69,7 +71,7 @@ echo $secretVar > publickeysfile
 
 curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
      --data "$(cat publickeysfile)" \
-     https://<subdomain>.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/jenkins-service/public-keys
+     https://<subdomain>.secretsmgr.cyberark.cloud/api/secrets/conjur/variable/conjur/authn-jwt/<service_id>/public-keys
 
 ```
 
