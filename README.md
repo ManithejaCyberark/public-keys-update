@@ -58,14 +58,13 @@ CONJUR_ACCESS_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$CONJURCLO
   	   https://conjurcloudint.secretsmgr.cyberark.cloud/api/authn/conjur/host%2Fdata%2Fconjur-cloud-host1/authenticate)
 
 #get the public-keys
-```
+
 publickey=$(curl -k http://jenkins:8080/jwtauth/conjur-jwk-set)
 export secretVar='{
     "type": "jwks",
     "value": '${publickey}'
   }'
 echo $secretVar > publickeysfile
-```
 
 #update the public-keys or set a secret
 
