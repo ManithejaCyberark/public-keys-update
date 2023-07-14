@@ -1,4 +1,4 @@
-![image](https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/441e1c50-be57-4c8b-9691-14022ce6f372)# public-keys update #
+# public-keys update
 ## Requirement
 + Jenkins Server
 + Conjur Secrets plugin
