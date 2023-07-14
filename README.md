@@ -6,7 +6,7 @@
 + Conjur Policies
   * the host or user should have permission to only update the public-keys.
   * Here an Example
-  * Note: make sure that the host has required permissions to ##update the #public-keys variable values in the Conjur Policies
+  * Note: make sure that the host has required permissions to ## update the ## public-keys variable values in the Conjur Policies
     ```
     - !permit
       resource: !variable conjur/authn-jwt/jenkins/public-keys
