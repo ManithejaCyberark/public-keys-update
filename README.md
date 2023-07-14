@@ -25,7 +25,7 @@
   <img width="1000" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/ebcbe9e0-315b-4c9d-a24c-fa168eb6a840">
 - Build steps to update the public-keys variable value
 ```
-# Conjur OS:
+# Instructions for Conjur OS:
 #!/bin/bash
 
 CONT_SESSION_TOKEN=$(curl --header "Accept-Encoding: base64" --data "$LOGINCREDENTIALSTOCONJUR" \
@@ -49,7 +49,7 @@ curl -H "Authorization: Token token=\"$CONT_SESSION_TOKEN\"" \
 ```
 
 ```
-# Conjur Enterprise and Conjur Cloud
+# Instructions for Conjur Enterprise and Conjur Cloud
 
 #!/bin/bash
 
