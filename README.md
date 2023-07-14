@@ -20,4 +20,4 @@
 
 
 
-@Usage from Jenkins freestyle project![image](https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/126bde5c-7935-4163-83f6-1da134dcf9be)
+- Usage from Jenkins freestyle project
