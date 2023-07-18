@@ -73,11 +73,10 @@ curl -H "Authorization: Token token=\"$CONJUR_ACCESS_TOKEN\"" \
 
 ```
 ## Example 
-<img width="1452" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/fd06dac9-0d91-494b-adee-1c50e5d2f32d">
+<img width="1087" alt="image" src="https://github.com/ManithejaCyberark/public-keys-update/assets/109070761/9941ffcf-ca4c-476c-b1c1-c22cc1899928">
 
 
-
-- **Restart the jenkins** and build the freestyle project will **update** the **public-keys** variable by connecting to the conjur cloud using ***conjur_access token***. 
+- **Restart the jenkins** and build/run the freestyle project will **update** the **public-keys** variable value by connecting to the conjur cloud using ***conjur_access token***. 
   ```
   for Conjur OS:
   - conjur variable value conjur/authn-jwt/<service-id>/public-keys
